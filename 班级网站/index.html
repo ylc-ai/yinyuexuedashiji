@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>国音26级音乐学 · 班级大事记</title>
+<meta name="description" content="国音26级音乐学班级大事记时间轴——记录我们一起走过的每一刻。" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<style>
+  /* ============ 基础变量与重置 ============ */
+  :root {
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+    --primary-light: #EFF6FF;
+    --gold: #F59E0B;
+    --gold-soft: #FEF3C7;
+    --red: #EF4444;
+    --red-soft: #FEF2F2;
+    --ink: #1E293B;
+    --muted: #64748B;
+    --bg: #F8FAFC;
+    --line: #CBD5E1;
+    --card-radius: 12px;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ 校徽水印底图 ============ */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url("assets/logo.jpg") center center / min(72vw, 540px) no-repeat;
+    opacity: 0.07;
+  }
+
+  ul { list-style: none; }
+  button { font-family: inherit; cursor: pointer; }
+
+  /* ============ 顶部标题区 ============ */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1E40AF 0%, var(--primary-dark) 45%, var(--primary) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 64px 20px 84px;
+  }
+  .hero::before,
+  .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+  }
+  .hero::before { width: 320px; height: 320px; top: -140px; left: -90px; }
+  .hero::after  { width: 260px; height: 260px; bottom: -130px; right: -70px; }
+
+  .hero .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeDown 0.7s 0.1s ease forwards;
+  }
+  .hero h1 {
+    position: relative;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeDown 0.7s 0.25s ease forwards;
+  }
+  .hero .subtitle {
+    position: relative;
+    margin-top: 12px;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.88);
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeDown 0.7s 0.4s ease forwards;
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============ 统计栏 ============ */
+  .stats-wrap {
+    max-width: 900px;
+    margin: -44px auto 0;
+    padding: 0 20px;
+    display: flex;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .stat-card {
+    flex: 1;
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: 20px 12px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: popIn 0.6s ease forwards;
+  }
+  .stat-card:nth-child(1) { animation-delay: 0.7s; }
+  .stat-card:nth-child(2) { animation-delay: 0.82s; }
+  .stat-card:nth-child(3) { animation-delay: 0.94s; }
+
+  @keyframes popIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .stat-card .stat-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .stat-card:nth-child(2) .stat-icon { background: #ECFDF5; color: #059669; }
+  .stat-card:nth-child(3) .stat-icon { background: #FFFBEB; color: var(--gold); }
+  .stat-num {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.2;
+  }
+  .stat-card:nth-child(2) .stat-num { color: #059669; }
+  .stat-card:nth-child(3) .stat-num { color: var(--gold); }
+  .stat-label { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* ============ 筛选与搜索 ============ */
+  .controls {
+    max-width: 900px;
+    margin: 28px auto 0;
+    padding: 18px 20px;
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    position: sticky;
+    top: 12px;
+    z-index: 20;
+  }
+  .filter-group { display: flex; flex-wrap: wrap; gap: 8px; flex: 1; min-width: 260px; }
+  .filter-btn {
+    border: 1.5px solid var(--line);
+    background: #fff;
+    color: var(--muted);
+    font-size: 14px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    transition: all 0.25s ease;
+  }
+  .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .filter-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+  .search-box {
+    position: relative;
+    min-width: 220px;
+    flex: 0 1 260px;
+  }
+  .search-box i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94A3B8;
+    font-size: 14px;
+  }
+  .search-box input {
+    width: 100%;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 16px 8px 38px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .search-box input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  }
+
+  .section-head {
+    max-width: 900px;
+    margin: 36px auto 4px;
+    padding: 0 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .section-head h2 { font-size: 20px; font-weight: 700; }
+  .section-head .result-count { font-size: 13px; color: var(--muted); }
+
+  /* ============ 时间轴 ============ */
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 0 12px;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+  .timeline.fading { opacity: 0; transform: translateY(10px); }
+
+  /* 中间竖线 */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    margin-left: -1.5px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, var(--primary) 0%, var(--line) 8%, var(--line) 92%, var(--primary) 100%);
+    transform: scaleY(0);
+    transform-origin: top center;
+  }
+  .timeline.ready::before { animation: drawLine 1.2s 0.15s ease forwards; }
+  @keyframes drawLine {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+  }
+
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 30px;
+    display: flex;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .timeline-item.in-view { opacity: 1; transform: translateY(0); }
+
+  .timeline-item.left  { justify-content: flex-end; padding-right: 52px; }
+  .timeline-item.right { margin-left: 50%; padding-left: 52px; justify-content: flex-start; }
+
+  /* 圆点 */
+  .timeline-dot {
+    position: absolute;
+    top: 24px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--dot, var(--primary));
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 2px var(--dot, var(--primary));
+    z-index: 2;
+  }
+  .timeline-item.left  .timeline-dot { right: -10px; }
+  .timeline-item.right .timeline-dot { left: -10px; }
+
+  .timeline-dot.dot-important {
+    background: var(--gold);
+    box-shadow: 0 0 0 2px var(--gold), 0 0 12px rgba(245, 158, 11, 0.7);
+    animation: dotGoldPulse 2s ease-in-out infinite;
+  }
+  .timeline-dot.dot-urgent {
+    background: var(--red);
+    box-shadow: 0 0 0 2px var(--red), 0 0 12px rgba(239, 68, 68, 0.7);
+    animation: dotRedPulse 1.2s ease-in-out infinite;
+  }
+  @keyframes dotGoldPulse {
+    0%, 100% { box-shadow: 0 0 0 2px var(--gold), 0 0 8px rgba(245, 158, 11, 0.6); }
+    50%      { box-shadow: 0 0 0 2px var(--gold), 0 0 18px rgba(245, 158, 11, 0.95); }
+  }
+  @keyframes dotRedPulse {
+    0%, 100% { box-shadow: 0 0 0 2px var(--red), 0 0 8px rgba(239, 68, 68, 0.6); }
+    50%      { box-shadow: 0 0 0 2px var(--red), 0 0 20px rgba(239, 68, 68, 1); }
+  }
+
+  /* ============ 事件卡片 ============ */
+  .event-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: 18px 20px 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .event-date {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .event-date i { font-size: 12px; }
+  .event-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 8px 0 10px;
+    line-height: 1.45;
+  }
+  .event-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+
+  .category-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 999px;
+    line-height: 1.6;
+  }
+  .cat-study   { color: #2563EB; background: #EFF6FF; }
+  .cat-exam    { color: #EA580C; background: #FFF7ED; }
+  .cat-activity{ color: #16A34A; background: #F0FDF4; }
+  .cat-notice  { color: #9333EA; background: #FAF5FF; }
+  .cat-other   { color: #64748B; background: #F1F5F9; }
+
+  .importance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .importance-badge.important { color: #B45309; background: var(--gold-soft); }
+  .importance-badge.urgent    { color: #DC2626; background: var(--red-soft); }
+
+  .event-desc { font-size: 14px; color: #475569; }
+
+  /* 重要事件：金色竖条 + 金色光晕脉冲 */
+  .event-card.is-important {
+  border-left: 4px solid var(--gold);
+  animation: cardGoldPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes cardGoldPulse {
+    0%, 100% { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 0 0 rgba(245, 158, 11, 0); }
+    50%      { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 0 22px rgba(245, 158, 11, 0.35); }
+  }
+  .event-card.is-important:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  /* 紧急事件：红色渐变背景 + 闪烁边框 + 角标 */
+  .event-card.is-urgent {
+    background: linear-gradient(135deg, #FEF2F2 0%, #FFFFFF 65%);
+    border: 1.5px solid var(--red);
+    animation: cardRedBlink 1.4s ease-in-out infinite;
+  }
+  @keyframes cardRedBlink {
+    0%, 100% { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 0 0 rgba(239, 68, 68, 0); }
+    50%      { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 0 20px rgba(239, 68, 68, 0.45);
+               border-color: #FCA5A5; }
+  }
+  .event-card.is-urgent:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-hover);
+  }
+  .urgent-ribbon {
+    position: absolute;
+    top: 12px;
+    right: -6px;
+    background: var(--red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 3px 12px 3px 10px;
+    border-radius: 6px 0 0 6px;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
+  }
+  .urgent-ribbon::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -6px;
+    border: 3px solid transparent;
+    border-top-color: #991B1B;
+    border-right-color: #991B1B;
+  }
+
+  /* ============ 空状态 / 加载 / 错误 ============ */
+  .state-box {
+    display: none;
+    text-align: center;
+    padding: 70px 20px 90px;
+    color: var(--muted);
+  }
+  .state-box.show { display: block; animation: fadeDown 0.4s ease; }
+  .state-box i { font-size: 44px; color: #CBD5E1; margin-bottom: 14px; }
+  .state-box p { font-size: 15px; }
+  .state-box .sub {
+    font-size: 13px;
+    margin-top: 6px;
+    color: #94A3B8;
+    line-height: 1.8;
+  }
+  .state-box .sub code {
+    background: #F1F5F9;
+    color: var(--primary-dark);
+    padding: 1px 7px;
+    border-radius: 5px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12.5px;
+  }
+  .state-box .retry-btn {
+    margin-top: 20px;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    padding: 9px 24px;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .state-box .retry-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+  /* ============ 回到顶部 ============ */
+  .back-top {
+    position: fixed;
+    right: 26px;
+    bottom: 34px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px);
+    transition: all 0.3s ease;
+    z-index: 50;
+  }
+  .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+  /* ============ 响应式：平板 ============ */
+  @media (max-width: 1024px) {
+    .timeline, .stats-wrap, .controls, .section-head { max-width: 760px; }
+    .hero h1 { font-size: 34px; }
+    .event-card { max-width: 330px; }
+  }
+
+  /* ============ 响应式：手机 ============ */
+  @media (max-width: 767px) {
+    body::before { background-size: min(92vw, 340px); }
+    .hero { padding: 48px 16px 72px; }
+    .hero h1 { font-size: 27px; letter-spacing: 1px; }
+    .hero .subtitle { font-size: 15px; }
+
+    .stats-wrap { gap: 10px; padding: 0 12px; }
+    .stat-card { padding: 14px 6px; }
+    .stat-num { font-size: 24px; }
+    .stat-label { font-size: 12px; }
+
+    .controls {
+      margin: 20px 12px 0;
+      position: static;
+      gap: 12px;
+      padding: 14px;
+    }
+    .filter-group { min-width: 100%; }
+    .filter-btn { font-size: 13px; padding: 6px 13px; }
+    .search-box { flex: 1 1 100%; }
+
+    .section-head { padding: 0 16px; margin-top: 28px; }
+
+    /* 竖线移到左侧 */
+    .timeline { padding: 20px 0 8px; }
+    .timeline::before { left: 20px; margin-left: 0; }
+    .timeline.ready::before { animation-name: drawLineMobile; }
+    @keyframes drawLineMobile {
+      from { transform: scaleY(0); }
+      to   { transform: scaleY(1); }
+    }
+
+    /* 所有卡片统一在右侧 */
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+      width: 100%;
+      margin-left: 0;
+      padding: 0 14px 0 52px;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+      left: 11px;
+      right: auto;
+      width: 18px;
+      height: 18px;
+      top: 22px;
+    }
+    .event-card { max-width: 100%; padding: 15px 16px 14px; }
+    .event-title { font-size: 16px; }
+    .event-desc { font-size: 13.5px; }
+
+    .back-top { right: 18px; bottom: 24px; width: 42px; height: 42px; }
+  }
+
+  /* 尊重系统“减少动态效果”设置 */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== 顶部标题区 ===== -->
+  <header class="hero">
+    <span class="hero-badge"><i class="fa-solid fa-book-open"></i>CLASS MEMORY</span>
+    <h1>国音26级音乐学 · 大事记</h1>
+    <p class="subtitle">记录我们一起走过的每一刻</p>
+  </header>
+
+  <!-- ===== 统计栏 ===== -->
+  <section class="stats-wrap" aria-label="事件统计">
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
+      <div class="stat-num" id="statTotal">0</div>
+      <div class="stat-label">总事件数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+      <div class="stat-num" id="statMonth">0</div>
+      <div class="stat-label">本月事件</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+      <div class="stat-num" id="statImportant">0</div>
+      <div class="stat-label">重要事件</div>
+    </div>
+  </section>
+
+  <!-- ===== 筛选与搜索 ===== -->
+  <section class="controls" aria-label="筛选与搜索">
+    <div class="filter-group" id="filterGroup" role="tablist">
+      <!-- 按钮由 JS 生成 -->
+    </div>
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search" id="searchInput" placeholder="搜索标题或描述…" aria-label="搜索事件" />
+    </div>
+  </section>
+
+  <div class="section-head">
+    <h2>时间轴</h2>
+    <span class="result-count" id="resultCount"></span>
+  </div>
+
+  <!-- ===== 时间轴主体 ===== -->
+  <main>
+    <div class="timeline" id="timeline"></div>
+
+    <div class="state-box" id="emptyState">
+      <i class="fa-regular fa-folder-open"></i>
+      <p>暂无符合条件的事件</p>
+      <p class="sub">试试切换其他分类，或换个关键词搜索吧</p>
+    </div>
+    <div class="state-box" id="errorState">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <p>事件数据加载失败</p>
+      <p class="sub" id="errorDetail">请检查 events.json 是否存在，或通过本地 HTTP 服务器打开本页面</p>
+      <button class="retry-btn" id="retryBtn" type="button">
+        <i class="fa-solid fa-rotate-right"></i> 重新加载
+      </button>
+    </div>
+  </main>
+
+  <!-- ===== 回到顶部 ===== -->
+  <button class="back-top" id="backTop" aria-label="回到顶部" title="回到顶部">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------- 配置与状态 ---------------- */
+  var CATEGORIES = ['全部', '学习', '考试', '活动', '通知', '其他'];
+  var CAT_CLASS = {
+    '学习': 'cat-study',
+    '考试': 'cat-exam',
+    '活动': 'cat-activity',
+    '通知': 'cat-notice',
+    '其他': 'cat-other'
+  };
+  var CAT_DOT_COLOR = {
+    '学习': '#2563EB',
+    '考试': '#EA580C',
+    '活动': '#16A34A',
+    '通知': '#9333EA',
+    '其他': '#64748B'
+  };
+  var WEEK = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+
+  var state = {
+    all: [],
+    category: '全部',
+    keyword: ''
+  };
+
+  var timelineEl = document.getElementById('timeline');
+  var emptyEl = document.getElementById('emptyState');
+  var errorEl = document.getElementById('errorState');
+  var searchInput = document.getElementById('searchInput');
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  /* ---------------- 工具函数 ---------------- */
+  function $(id) { return document.getElementById(id); }
+
+  function escapeHtml(str) {
+    return String(str == null ? '' : str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function parseDate(dateStr) {
+    return new Date(dateStr + 'T00:00:00');
+  }
+
+  // 单日：2026年11月15日 周六
+  function formatDate(dateStr) {
+    var d = parseDate(dateStr);
+    return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' +
+           d.getDate() + '日 ' + WEEK[d.getDay()];
+  }
+
+  function formatDateShort(d) {
+    return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日';
+  }
+
+  // 日期区间：同年同月省略到“—17日”，跨年则两端写完整
+  function formatRange(startStr, endStr) {
+    var s = parseDate(startStr);
+    var e = parseDate(endStr);
+    if (s.getFullYear() === e.getFullYear() && s.getMonth() === e.getMonth()) {
+      return s.getFullYear() + '年' + (s.getMonth() + 1) + '月' +
+             s.getDate() + '日—' + e.getDate() + '日';
+    }
+    if (s.getFullYear() === e.getFullYear()) {
+      return s.getFullYear() + '年' + (s.getMonth() + 1) + '月' + s.getDate() + '日—' +
+             (e.getMonth() + 1) + '月' + e.getDate() + '日';
+    }
+    return formatDateShort(s) + '—' + formatDateShort(e);
+  }
+
+  // 事件日期展示：优先使用自定义时间段标签，其次按 endDate 渲染区间，否则单日带星期
+  function formatEventDate(ev) {
+    if (ev.dateLabel) return ev.dateLabel;
+    if (ev.endDate) return formatRange(ev.date, ev.endDate);
+    return formatDate(ev.date);
+  }
+
+  function animateNumber(el, target, duration) {
+    var start = performance.now();
+    duration = duration || 1100;
+    function tick(now) {
+      var p = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      el.textContent = Math.round(eased * target);
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------------- 初始化 ---------------- */
+  function init() {
+    buildFilters();
+    bindEvents();
+    loadEvents();
+  }
+
+  function showState(name) {
+    errorEl.classList.toggle('show', name === 'error');
+    // empty 状态由 renderTimeline 控制
+  }
+
+  function loadEvents() {
+    fetch('./events.json', { cache: 'no-cache' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        if (!Array.isArray(data)) throw new Error('数据格式错误');
+        state.all = data.slice().sort(function (a, b) {
+          if (a.date === b.date) return (a.id || 0) - (b.id || 0);
+          return a.date < b.date ? -1 : 1;
+        });
+        renderStats();
+        renderTimeline();
+      })
+      .catch(function (err) {
+        showError(err);
+        timelineEl.style.display = 'none';
+      });
+  }
+
+  function showError(err) {
+    var detail = $('errorDetail');
+    if (location.protocol === 'file:') {
+      detail.innerHTML =
+        '当前是直接双击 <code>index.html</code> 打开的（地址栏以 <code>file://</code> 开头），' +
+        '浏览器会禁止页面读取同目录下的 <code>events.json</code>。<br>' +
+        '请在本项目文件夹中运行 <code>python -m http.server 8000</code>，' +
+        '然后访问 <code>http://localhost:8000/</code>';
+    } else {
+      detail.textContent =
+        '无法读取 events.json（' + ((err && err.message) || '未知错误') +
+        '）。请确认 events.json 与 index.html 在同一目录，且通过本地 HTTP 服务器打开本页面。';
+    }
+    showState('error');
+  }
+
+  /* ---------------- 统计 ---------------- */
+  function renderStats() {
+    var now = new Date();
+    var monthCount = state.all.filter(function (ev) {
+      var d = parseDate(ev.date);
+      return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
+    }).length;
+    var importantCount = state.all.filter(function (ev) {
+      return ev.importance === 'important' || ev.importance === 'urgent';
+    }).length;
+
+    animateNumber($('statTotal'), state.all.length);
+    animateNumber($('statMonth'), monthCount);
+    animateNumber($('statImportant'), importantCount);
+  }
+
+  /* ---------------- 筛选按钮 ---------------- */
+  function buildFilters() {
+    var group = $('filterGroup');
+    group.innerHTML = CATEGORIES.map(function (cat) {
+      return '<button type="button" class="filter-btn' +
+        (cat === '全部' ? ' active' : '') +
+        '" data-cat="' + cat + '">' + cat + '</button>';
+    }).join('');
+  }
+
+  function bindEvents() {
+    $('filterGroup').addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      state.category = btn.getAttribute('data-cat');
+      document.querySelectorAll('.filter-btn').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      scheduleRender();
+    });
+
+    // 实时过滤 + 回车搜索
+    searchInput.addEventListener('input', function () {
+      state.keyword = searchInput.value.trim().toLowerCase();
+      scheduleRender();
+    });
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        state.keyword = searchInput.value.trim().toLowerCase();
+        scheduleRender();
+        searchInput.blur();
+      }
+    });
+
+    var backTop = $('backTop');
+    window.addEventListener('scroll', function () {
+      backTop.classList.toggle('show', window.scrollY > 400);
+    }, { passive: true });
+    backTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    $('retryBtn').addEventListener('click', function () {
+      timelineEl.style.display = '';
+      showState('ready');
+      loadEvents();
+    });
+  }
+
+  var renderTimer = null;
+  function scheduleRender() {
+    clearTimeout(renderTimer);
+    timelineEl.classList.add('fading');
+    renderTimer = setTimeout(renderTimeline, 180);
+  }
+
+  /* ---------------- 时间轴渲染 ---------------- */
+  function getFiltered() {
+    return state.all.filter(function (ev) {
+      var catOk = state.category === '全部' || ev.category === state.category;
+      var kwOk = !state.keyword ||
+        (ev.title || '').toLowerCase().indexOf(state.keyword) > -1 ||
+        (ev.description || '').toLowerCase().indexOf(state.keyword) > -1;
+      return catOk && kwOk;
+    });
+  }
+
+  function cardHTML(ev, index) {
+    var side = index % 2 === 0 ? 'left' : 'right';
+    var catClass = CAT_CLASS[ev.category] || 'cat-other';
+    var dotColor = CAT_DOT_COLOR[ev.category] || '#64748B';
+    var dotClass = ev.importance === 'important' ? 'dot-important'
+                  : ev.importance === 'urgent' ? 'dot-urgent' : '';
+    var cardClass = ev.importance === 'important' ? 'is-important'
+                  : ev.importance === 'urgent' ? 'is-urgent' : '';
+
+    var badge = '';
+    if (ev.importance === 'important') {
+      badge = '<span class="importance-badge important"><i class="fa-solid fa-star"></i>重要</span>';
+    } else if (ev.importance === 'urgent') {
+      badge = '<span class="importance-badge urgent"><i class="fa-solid fa-bolt"></i>紧急</span>';
+    }
+
+    var ribbon = ev.importance === 'urgent'
+      ? '<span class="urgent-ribbon">紧急</span>' : '';
+
+    // 仅首批卡片做依次入场的错峰，避免后续滚动入场时延迟过长
+    var stagger = index < 8 ? 'transition-delay:' + (index * 70) + 'ms;' : '';
+
+    return '' +
+      '<div class="timeline-item ' + side + '" style="' + stagger + '">' +
+        '<span class="timeline-dot ' + dotClass + '" style="--dot:' + dotColor + '"></span>' +
+        '<article class="event-card ' + cardClass + '">' +
+          ribbon +
+          '<div class="event-date"><i class="fa-regular fa-calendar"></i>' +
+            escapeHtml(formatEventDate(ev)) +
+          '</div>' +
+          '<h3 class="event-title">' + escapeHtml(ev.title) + '</h3>' +
+          '<div class="event-meta">' +
+            '<span class="category-tag ' + catClass + '">' + escapeHtml(ev.category) + '</span>' +
+            badge +
+          '</div>' +
+          '<p class="event-desc">' + escapeHtml(ev.description) + '</p>' +
+        '</article>' +
+      '</div>';
+  }
+
+  function renderTimeline() {
+    var list = getFiltered();
+    timelineEl.classList.remove('fading');
+
+    timelineEl.innerHTML = list.map(cardHTML).join('');
+    timelineEl.classList.add('ready');
+    timelineEl.style.display = '';
+
+    emptyEl.classList.toggle('show', list.length === 0);
+
+    $('resultCount').textContent =
+      '共 ' + list.length + ' 条' +
+      (state.category !== '全部' ? ' · 分类：' + state.category : '') +
+      (state.keyword ? ' · 关键词：“' + searchInput.value.trim() + '”' : '');
+
+    document.querySelectorAll('.timeline-item').forEach(function (item) {
+      io.observe(item);
+    });
+  }
+
+  /* ---------------- 启动 ---------------- */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>

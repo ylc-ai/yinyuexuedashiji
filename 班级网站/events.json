@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "title": "线上见面会",
+    "date": "2026-09-01",
+    "category": "活动",
+    "importance": "normal",
+    "description": "开学前夕，班主任与全体同学首次线上见面，介绍入学安排与注意事项。"
+  },
+  {
+    "id": 2,
+    "title": "入学报到",
+    "date": "2026-09-02",
+    "category": "通知",
+    "importance": "important",
+    "description": "2026级新生正式到校报到，领取资料、安排宿舍，大学生活就此开启。"
+  },
+  {
+    "id": 3,
+    "title": "选课与新生体检",
+    "date": "2026-09-03",
+    "category": "通知",
+    "importance": "normal",
+    "description": "完成新学期课程选课，并按要求参加新生入学体检。"
+  },
+  {
+    "id": 4,
+    "title": "正式上课",
+    "date": "2026-09-07",
+    "category": "学习",
+    "importance": "important",
+    "description": "结束入学教育，按照课表正式开始大学第一学期的课程学习。"
+  },
+  {
+    "id": 5,
+    "title": "开学典礼 · 新生见面会 · 新生音乐会",
+    "date": "2026-09-08",
+    "category": "活动",
+    "importance": "important",
+    "description": "白天参加开学典礼与新生见面会，晚上欣赏新生音乐会，仪式感满满的一天。"
+  },
+  {
+    "id": 6,
+    "title": "第一次班会",
+    "date": "2026-09-09",
+    "category": "活动",
+    "importance": "normal",
+    "description": "班级召开第一次班会，同学们依次自我介绍，竞选临时班委。"
+  },
+  {
+    "id": 7,
+    "title": "办理工行补助卡",
+    "date": "2026-09-14",
+    "category": "通知",
+    "importance": "normal",
+    "description": "统一办理工商银行补助卡，用于后续奖助学金与各项补助的发放。"
+  },
+  {
+    "id": 8,
+    "title": "四级预报名",
+    "date": "2026-09-16",
+    "endDate": "2026-09-17",
+    "category": "通知",
+    "importance": "normal",
+    "description": "全国大学英语四级考试预报名，按照学校安排在两天内完成网上报名信息填报。"
+  },
+  {
+    "id": 9,
+    "title": "校友值年返校活动",
+    "date": "2026-09-19",
+    "category": "活动",
+    "importance": "normal",
+    "description": "学院举办校友值年返校活动，同学们参与志愿服务，感受校友文化传承。"
+  },
+  {
+    "id": 10,
+    "title": "主题班会",
+    "date": "2026-09-22",
+    "category": "活动",
+    "importance": "normal",
+    "description": "召开主题班会，围绕入学适应、校规校纪与班级建设展开交流。"
+  },
+  {
+    "id": 11,
+    "title": "四级正式报名并缴费",
+    "date": "2026-09-22",
+    "endDate": "2026-09-28",
+    "category": "通知",
+    "importance": "important",
+    "description": "登录报名系统完成四级考试正式报名与缴费，请务必在9月28日截止前办理完毕。"
+  },
+  {
+    "id": 12,
+    "title": "道德与法治实践作业",
+    "date": "2026-09-30",
+    "dateLabel": "2026年9月—12月",
+    "category": "学习",
+    "importance": "normal",
+    "description": "跨学期实践作业，需分组完成选题、调研与结题汇报，12月底前提交成果。"
+  },
+  {
+    "id": 13,
+    "title": "外研社·国才杯校级演讲比赛初赛",
+    "date": "2026-10-08",
+    "category": "学习",
+    "importance": "normal",
+    "description": "外研社·国才杯校级英语演讲比赛初赛，检验口语表达与临场思辨能力。"
+  },
+  {
+    "id": 14,
+    "title": "室外体测、购买军训服",
+    "date": "2026-10-09",
+    "category": "通知",
+    "importance": "normal",
+    "description": "进行室外体能测试，并按通知统一购买军训服装。"
+  },
+  {
+    "id": 15,
+    "title": "室外体测",
+    "date": "2026-10-10",
+    "category": "通知",
+    "importance": "normal",
+    "description": "按班级分时段参加室外体质健康测试，注意穿着运动装备。"
+  },
+  {
+    "id": 16,
+    "title": "外研社·国才杯校级综合能力初赛",
+    "date": "2026-10-11",
+    "category": "学习",
+    "importance": "normal",
+    "description": "外研社·国才杯校级英语综合能力比赛初赛，考查听说读写综合素养。"
+  },
+  {
+    "id": 17,
+    "title": "艺术实践周",
+    "date": "2026-10-12",
+    "endDate": "2026-10-25",
+    "category": "活动",
+    "importance": "normal",
+    "description": "为期两周的艺术实践周，参与各类艺术体验、排练与展演活动。"
+  },
+  {
+    "id": 18,
+    "title": "室外体测",
+    "date": "2026-10-23",
+    "category": "通知",
+    "importance": "normal",
+    "description": "继续进行室外体质健康测试，请相关班级同学按时到场参加。"
+  },
+  {
+    "id": 19,
+    "title": "体测免测申请截止",
+    "date": "2026-10-30",
+    "category": "通知",
+    "importance": "important",
+    "description": "符合免测条件的同学须在10月30日之前提交免测申请及证明材料，逾期不再受理。"
+  },
+  {
+    "id": 20,
+    "title": "体测补测",
+    "date": "2026-10-31",
+    "category": "通知",
+    "importance": "normal",
+    "description": "因特殊情况未能按时参加体测的同学，统一在今日进行补测。"
+  },
+  {
+    "id": 21,
+    "title": "期中考试",
+    "date": "2026-11-02",
+    "dateLabel": "2026年11月第一周",
+    "category": "考试",
+    "importance": "important",
+    "description": "期中考试周，多门课程随堂或集中考试，请提前规划复习节奏。"
+  },
+  {
+    "id": 22,
+    "title": "四级准考证开始打印",
+    "date": "2026-12-01",
+    "category": "通知",
+    "importance": "normal",
+    "description": "全国大学英语四级考试准考证开放打印，请及时登录报名系统下载并打印。"
+  },
+  {
+    "id": 23,
+    "title": "全国大学英语四级考试（上午9:00开考）",
+    "date": "2026-12-12",
+    "category": "考试",
+    "importance": "urgent",
+    "description": "上午9:00准时开考，请提前到达考场，带齐准考证、身份证、学生证与考试文具。"
+  },
+  {
+    "id": 24,
+    "title": "随堂考试周",
+    "date": "2026-12-21",
+    "dateLabel": "2026年12月第四周",
+    "category": "考试",
+    "importance": "normal",
+    "description": "各科随堂考试集中进行，一学期的课程学习迎来集中检验。"
+  },
+  {
+    "id": 25,
+    "title": "停课考试周",
+    "date": "2027-01-04",
+    "dateLabel": "2027年1月第一周",
+    "category": "考试",
+    "importance": "important",
+    "description": "全校停课进入期末考试周，祝大家逢考必过，顺利迎来寒假！"
+  }
+]

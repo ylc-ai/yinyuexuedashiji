@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "cms": {
+    "name": "班级大事记管理",
+    "logo": "",
+    "description": "管理班级时间轴的事件内容"
+  },
+  "source": {
+    "repository": "YOUR_GITHUB_USERNAME/YOUR_REPO_NAME",
+    "branch": "main",
+    "base_path": "/",
+    "path": "events.json"
+  },
+  "collections": [
+    {
+      "name": "events",
+      "label": "事件管理",
+      "description": "管理时间轴上的所有事件",
+      "type": "object",
+      "format": "json",
+      "multiple": true,
+      "path": "events.json",
+      "fields": [
+        {
+          "name": "id",
+          "label": "ID",
+          "type": "number",
+          "description": "自动编号，保持唯一（新建事件时在当前最大 ID 基础上加 1）"
+        },
+        {
+          "name": "title",
+          "label": "事件标题",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "date",
+          "label": "日期",
+          "type": "date",
+          "required": true,
+          "description": "格式 YYYY-MM-DD，用于时间轴排序；时间段事件填写开始日期"
+        },
+        {
+          "name": "endDate",
+          "label": "结束日期（选填）",
+          "type": "date",
+          "description": "有明确起止日期的事件填写，如 9月16日—17日；页面会自动显示为日期区间，不填则按单日显示"
+        },
+        {
+          "name": "dateLabel",
+          "label": "时间段自定义文案（选填）",
+          "type": "string",
+          "description": "无法定位到具体日期时使用，如「2026年11月第一周」「2026年9月—12月」；填写后优先于日期自动格式显示"
+        },
+        {
+          "name": "category",
+          "label": "分类",
+          "type": "select",
+          "options": ["学习", "考试", "活动", "通知", "其他"],
+          "default": "其他"
+        },
+        {
+          "name": "importance",
+          "label": "重要程度",
+          "type": "select",
+          "options": [
+            { "value": "normal", "label": "普通（normal）" },
+            { "value": "important", "label": "重要（important）金色高亮" },
+            { "value": "urgent", "label": "紧急（urgent）红色高亮" }
+          ],
+          "default": "normal"
+        },
+        {
+          "name": "description",
+          "label": "详细描述",
+          "type": "textarea",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
